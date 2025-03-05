@@ -5,11 +5,16 @@ export const useTimeTableStore = defineStore('timeTable', () => {
   const filledSlots = ref([])
   const days = ref(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
   
-  const FillSlot = (day, hour, type)=>{
-
+  const FillSlot = (day, hour, name, phoneNumber)=>{
+    //axios push
+    return;
   }
   const FetchFilledSlots = ()=>{
     //axios get
   }
-  return { filledSlots, days  }
+  const IsSlotFilled = ()=>{
+    return false;
+  }
+
+  return { filledSlots, days, FillSlot, FetchFilledSlots, IsSlotFilled }
 })

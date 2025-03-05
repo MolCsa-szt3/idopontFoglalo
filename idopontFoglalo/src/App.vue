@@ -12,5 +12,6 @@ import { RouterLink, RouterView } from 'vue-router'
   </header>
 
   <RouterView />
+  <!-- fodrász téma -->
 </template>
 
