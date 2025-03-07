@@ -4,7 +4,8 @@ import { defineStore } from 'pinia'
 export const useTimeTableStore = defineStore('timeTable', () => {
   const filledSlots = ref([])
   const days = ref(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
-  
+  const startHour = ref(8)
+  const endHour = ref(16)
   const FillSlot = (day, hour, name, phoneNumber)=>{
     //axios push
     return;

@@ -4,5 +4,8 @@
 
 <template>
   <main>
+    <div v-for="">
+
+    </div>
   </main>
 </template>
