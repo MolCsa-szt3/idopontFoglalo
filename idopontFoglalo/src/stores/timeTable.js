@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, callWithAsyncErrorHandling } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios';
 
@@ -20,27 +20,55 @@ export const useTimeTableStore = defineStore('timeTable', () => {
     //axios push
     return;
   }
-  const FetchFilledSlots = ()=>{
-    apiClient.get('/')
-  .then(response => {
-    filledSlots.value = response.data;
-  })
-  .catch(error => {
-    console.error(error);
-  });
-  }
+  // const FetchFilledSlots = async ()=>{
+  //   apiClient.get('/')
+  // .then(response => {
+  //   filledSlots.value = response.data;
+  //   console.log(response.data)
+  //   console.log(filledSlots.value.length)
+  // })
+  // .catch(error => {
+  //   console.error(error);
+  // });
+  // }
+  const FetchFilledSlots = async () => {
+    axios.get('http://localhost:3000/foglaltIdopontok')
+    .then(resp => filledSlots.value = resp.data)
+  } 
+
   const TableGen = ()=>{
-    for (let index = 0; index < days.length; index++) {
-      const currentDay = array[index];
-      for (let currentHour = startHour; currentHour <= endHour; currentHour++) {
-        filledSlots.forEach(element => {
-          if(element.day == currentDay && element.hour == currentHour={})
+    console.log("we started")
+    for (let index = 0; index < days.value.length; index++) {
+      const currentDay = days.value[index];
+      //console.log("we at " + currentDay)
+      for (let currentHour = startHour.value; currentHour <= endHour.value; currentHour++) {
+        let isTaken = false
+        console.log(filledSlots.value.length)
+        filledSlots.value.forEach(element => {
+          console.log(element.hour);
+          
+          if(!isTaken && element.day == currentDay && element.hour === currentHour){
+            table.value.push({
+              "day": currentDay,
+            "hour": currentHour,
+            "taken": false
+            })
+            
+            isTaken = true;
+          }
         });
         
+        if(!isTaken){
+          table.value.push({
+            "day": currentDay,
+            "hour": currentHour,
+            "taken": false
+          });
+        }
       }
       
     }
   }
 
-  return { filledSlots, days, FillSlot, FetchFilledSlots, IsSlotFilled }
+  return { table, filledSlots, days, FillSlot, FetchFilledSlots, TableGen}
 })
