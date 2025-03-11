@@ -45,13 +45,13 @@ export const useTimeTableStore = defineStore('timeTable', () => {
         let isTaken = false
         console.log(filledSlots.value.length)
         filledSlots.value.forEach(element => {
-          console.log(element.hour);
+          //console.log(element.day,currentDay ,element.hour, currentHour, element.day == currentDay && element.hour == currentHour);
           
-          if(!isTaken && element.day == currentDay && element.hour === currentHour){
+          if(!isTaken && element.day == currentDay && element.hour == currentHour){
             table.value.push({
               "day": currentDay,
             "hour": currentHour,
-            "taken": false
+            "taken": true
             })
             
             isTaken = true;
