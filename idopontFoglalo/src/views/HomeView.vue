@@ -18,6 +18,10 @@ const reserveTime = (day, hour) =>{
   timeTable.reserveHour = hour;
   router.push("/post")
 }
+timeTable.filledSlots.forEach(element => {
+  console.log(element);
+  
+});
 </script>
 
 <template>

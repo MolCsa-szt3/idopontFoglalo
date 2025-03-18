@@ -1,10 +1,18 @@
 {
-    "foglaltIdopontok":[
-        {
-            "day": "Thursday",
-            "hour": 8,
-            "name": "Molnár Csaba",
-            "phoneNumber":"+06301234567"
-        }
-    ]
+  "foglaltIdopontok": [
+    {
+      "day": "Thursday",
+      "hour": 8,
+      "name": "Molnár Csaba",
+      "phoneNumber": "+06301234567",
+      "id": "4652"
+    },
+    {
+      "id": "404e",
+      "day": "Monday",
+      "hour": 8,
+      "name": "sad",
+      "phoneNumber": "fdsa"
+    }
+  ]
 }

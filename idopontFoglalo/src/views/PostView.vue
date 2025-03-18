@@ -21,7 +21,9 @@ const phoneNumber = ref("")
 if(timeTable.reserveDay == "" ||timeTable.reserveHour == 0) {router.push("/");}
 
 const save = ()=>{
-  timeTable.FillSlot(timeTable.reserveDay, timeTable.reserveHour, name, phoneNumber)
+  timeTable.FillSlot(timeTable.reserveDay, timeTable.reserveHour, name.value, phoneNumber.value)
+
+  router.push("/")
 }
 
 

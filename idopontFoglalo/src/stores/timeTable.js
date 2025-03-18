@@ -18,7 +18,16 @@ export const useTimeTableStore = defineStore('timeTable', () => {
 
   const FillSlot = (day, hour, name, phoneNumber)=>{
     //axios push
-    apiClient.push({
+    /*
+    apiClient.post({
+      "day": day,
+      "hour": hour,
+      "name": name,
+      "phoneNumber":phoneNumber
+  })
+      */
+     console.log(day, hour, name, phoneNumber)
+    axios.post('http://localhost:3000/foglaltIdopontok', {
       "day": day,
       "hour": hour,
       "name": name,
