@@ -20,6 +20,48 @@
       "hour": 12,
       "name": "man",
       "phoneNumber": "+36 30 1234567"
+    },
+    {
+      "id": "9823",
+      "day": "Tuesday",
+      "hour": 10,
+      "name": "the man that fell into the river in Lego City",
+      "phoneNumber": "blubblubblub"
+    },
+    {
+      "id": "fcf1",
+      "day": "Wednesday",
+      "hour": 8,
+      "name": "asd",
+      "phoneNumber": "fgaerg"
+    },
+    {
+      "id": "9dc0",
+      "day": "Tuesday",
+      "hour": 12,
+      "name": "sdfas",
+      "phoneNumber": "tj65j"
+    },
+    {
+      "id": "d04f",
+      "day": "Friday",
+      "hour": 8,
+      "name": "asdf",
+      "phoneNumber": "dasfg"
+    },
+    {
+      "id": "cea3",
+      "day": "Sunday",
+      "hour": 8,
+      "name": "oh boy 8",
+      "phoneNumber": "errgsaer"
+    },
+    {
+      "id": "0ecc",
+      "day": "Saturday",
+      "hour": 13,
+      "name": "asdff",
+      "phoneNumber": "dsaf"
     }
   ]
 }

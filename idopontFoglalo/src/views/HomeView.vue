@@ -5,7 +5,6 @@ import { useRouter } from 'vue-router';
 const timeTable = useTimeTableStore()
 const router = useRouter()
 
-
 onMounted(async ()=> {
   timeTable.FetchFilledSlots()
   .then( () => {
