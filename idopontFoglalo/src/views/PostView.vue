@@ -20,9 +20,9 @@ const phoneNumber = ref("")
 
 if(timeTable.reserveDay == "" ||timeTable.reserveHour == 0) {router.push("/");}
 
-const save = ()=>{
+const save = async ()=>{
   timeTable.FillSlot(timeTable.reserveDay, timeTable.reserveHour, name.value, phoneNumber.value)
-
+  setTimeout(timeTable.TableGen,750)
   router.push("/")
 }
 
