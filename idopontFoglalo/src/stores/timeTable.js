@@ -69,6 +69,7 @@ export const useTimeTableStore = defineStore('timeTable', () => {
       
     }
   }
-
-  return { table, filledSlots, days, FillSlot, FetchFilledSlots, TableGen}
+  const reserveDay = ref("")
+  const reserveHour = ref(0)
+  return { table, filledSlots, days, FillSlot, FetchFilledSlots, TableGen, reserveDay, reserveHour}
 })
