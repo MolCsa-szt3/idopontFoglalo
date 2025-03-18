@@ -1,11 +1,14 @@
 <template>
   <h3>Időpontfoglalás</h3>
-  <form @submit.prevent="save">
-    <p>Foglal: {{timeTable.reserveDay}} {{ timeTable.reserveHour }}:00</p>
-    <input type="text" v-model="name" placeholder="Név"><br>
-    <input type="text" v-model="phoneNumber" placeholder="Telefonszám"><br>
-    <button>Mentés</button>
-  </form>
+  <div v-if="!saving">
+    <form @submit.prevent="save">
+      <p>Foglal: {{timeTable.reserveDay}} {{ timeTable.reserveHour }}:00</p>
+      <input type="text" v-model="name" placeholder="Név"><br>
+      <input type="text" v-model="phoneNumber" placeholder="Telefonszám"><br>
+      <button>Mentés</button>
+    </form>
+  </div>
+  <h4 v-if="saving">Köszönjük, hogy e szalont választotta!</h4>
 </template>
 
 <script setup>
@@ -17,14 +20,16 @@ const router = useRouter()
 
 const name = ref("")
 const phoneNumber = ref("")
+const saving = ref(false)
 
 if(timeTable.reserveDay == "" ||timeTable.reserveHour == 0) {router.push("/");}
 
 const save = ()=>{
+  saving.value = true
   timeTable.FillSlot(timeTable.reserveDay, timeTable.reserveHour, name.value, phoneNumber.value)
   setTimeout(timeTable.FetchFilledSlots,250)
   setTimeout(timeTable.TableGen,750)
-  router.push("/")
+  setTimeout(()=>{router.push("/"), 1000})
 }
 
 

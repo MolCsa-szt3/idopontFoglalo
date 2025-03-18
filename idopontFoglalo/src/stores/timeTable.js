@@ -53,6 +53,7 @@ export const useTimeTableStore = defineStore('timeTable', () => {
 
   const TableGen = ()=>{
     console.log("we started")
+    table.value = []; //reset
     for (let index = 0; index < days.value.length; index++) {
       const currentDay = days.value[index];
       //console.log("we at " + currentDay)
