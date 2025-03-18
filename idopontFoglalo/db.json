@@ -13,6 +13,13 @@
       "hour": 8,
       "name": "sad",
       "phoneNumber": "fdsa"
+    },
+    {
+      "id": "3a23",
+      "day": "Wednesday",
+      "hour": 12,
+      "name": "man",
+      "phoneNumber": "+36 30 1234567"
     }
   ]
 }

@@ -32,14 +32,10 @@ timeTable.filledSlots.forEach(element => {
         <div v-for="day in timeTable.days" class="col-1">
           <h4>{{ day }}</h4>
             <div v-for=" dates in timeTable.table">
-                <div v-if="dates.day == day" >
-          
-                  <div class="border">
+                <div v-if="dates.day == day" class="border">
                     <p>{{ dates.hour }}:00</p>
                     <p v-if="dates.taken">FOGLALT</p>
                     <button v-if="!dates.taken" v-on:click="reserveTime(dates.day,dates.hour)" >SZABAD</button>
-                    
-                  </div>
                 </div>
             </div>
         </div>
