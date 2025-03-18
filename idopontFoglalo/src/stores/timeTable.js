@@ -18,6 +18,12 @@ export const useTimeTableStore = defineStore('timeTable', () => {
 
   const FillSlot = (day, hour, name, phoneNumber)=>{
     //axios push
+    apiClient.push({
+      "day": day,
+      "hour": hour,
+      "name": name,
+      "phoneNumber":phoneNumber
+  })
     return;
   }
   // const FetchFilledSlots = async ()=>{

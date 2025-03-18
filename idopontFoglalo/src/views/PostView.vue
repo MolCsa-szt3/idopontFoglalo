@@ -2,8 +2,8 @@
   <h3>Időpontfoglalás</h3>
   <form @submit.prevent="save">
     <p>Foglal: {{timeTable.reserveDay}} {{ timeTable.reserveHour }}:00</p>
-    <input type="text" v-model="name" placeholder="Feladat neve"><br>
-    <input type="text" v-model="phoneNumber"><br>
+    <input type="text" v-model="name" placeholder="Név"><br>
+    <input type="text" v-model="phoneNumber" placeholder="Telefonszám"><br>
     <button>Mentés</button>
   </form>
 </template>
@@ -15,8 +15,14 @@ const timeTable = useTimeTableStore()
 import { useRouter } from 'vue-router';
 const router = useRouter()
 
+const name = ref("")
+const phoneNumber = ref("")
 
 if(timeTable.reserveDay == "" ||timeTable.reserveHour == 0) {router.push("/");}
+
+const save = ()=>{
+  timeTable.FillSlot(timeTable.reserveDay, timeTable.reserveHour, name, phoneNumber)
+}
 
 
 
